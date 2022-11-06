@@ -47,8 +47,14 @@ public class ChibuzoTurtle {
 
     }
 
+    private void moveNorthWard(int noOfSteps) {
+        int newRow = noOfSteps + currentPosition.getRow();
+        currentPosition.setRow(newRow);
+    }
+
     private void moveWestWard(int noOfSteps) {
-        int
+        int newCol = noOfSteps + currentPosition.getCol();
+        currentPosition.setRow(newCol);
     }
 
     private void moveSouthWard(int noOfSteps) {
