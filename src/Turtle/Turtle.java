@@ -47,8 +47,14 @@ public class Turtle {
 
     public void moveForward(int noOfSteps, Sketchpad sketchpad) {
       noOfSteps = noOfSteps - 1;
+      if(turtlePen.getPosition() != PenPosition.UP) writeOn(sketchpad);
       moveForward(noOfSteps);
     }
+
+    private void writeOn(Sketchpad sketchpad) {
+
+    }
+
     public void turnRight(){
         if(currentDirection == X_AXIS) currentDirection = Y_AXIS;
         else if(currentDirection == Y_AXIS) currentDirection = N_X_AXIS;

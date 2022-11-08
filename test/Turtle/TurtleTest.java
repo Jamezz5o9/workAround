@@ -53,5 +53,9 @@ public class TurtleTest {
         tortoise.turnRight();
         tortoise.moveForward(3, pad);
         assertEquals(new Position(2, 5), tortoise.getCurrentPosition());
+        tortoise.turnLeft();
+        tortoise.moveForward(2, pad);
+        assertEquals(new Position(2, 4), tortoise.getCurrentPosition());
+
     }
 }
