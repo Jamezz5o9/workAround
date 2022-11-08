@@ -1,5 +1,5 @@
 package Turtle;
 
 public enum Direction {
-    SOUTH, EAST, WEST, NORTH;
+    X_AXIS, Y_AXIS;
 }

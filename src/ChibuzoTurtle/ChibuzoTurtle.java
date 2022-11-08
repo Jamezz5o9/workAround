@@ -10,7 +10,6 @@ public class ChibuzoTurtle {
     public void penUp(){
         penIsUp = true;
     }
-
     public void penDown(){
         penIsUp = false;
     }
@@ -36,14 +35,20 @@ public class ChibuzoTurtle {
     private void turn(Direction direction) {
         currentDirection = direction;
     }
-
-    public void move(int noOfSteps, SketchPad pad){
-
-        noOfSteps = noOfSteps - 1 ;
+    private void move(int noOfSteps){
         if(currentDirection == EAST) moveEastWard(noOfSteps);
         else if(currentDirection == SOUTH) moveSouthWard(noOfSteps);
         else if(currentDirection == WEST) moveWestWard(noOfSteps);
         else moveNorthWard(noOfSteps);
+    }
+
+    public void move(SketchPad pad, int noOfSteps){
+        noOfSteps = noOfSteps - 1 ;
+        if(!penIsUp) writeOn(pad);
+        move(noOfSteps);
+    }
+
+    private void writeOn(SketchPad pad) {
 
     }
 
@@ -71,7 +76,4 @@ public class ChibuzoTurtle {
         return currentPosition;
     }
 
-    public void setPosition(Position position) {
-        this.currentPosition = position;
-    }
 }

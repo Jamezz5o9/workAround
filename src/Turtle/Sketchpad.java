@@ -1,7 +1,15 @@
 package Turtle;
 
 public class Sketchpad {
-    private int[][] floor = new int[20][20];
+    private int[][] floor;
+    private int row;
+    private int col;
+
+    public Sketchpad(int row, int col){
+        floor = new int[row][col];
+        this.row = row;
+        this.col = col;
+    }
 
     public void display(){
         for(int i = 0; i < floor.length; i++){
@@ -12,6 +20,7 @@ public class Sketchpad {
             System.out.println();
         }
     }
+
 
     public int[][] getFloor() {
         return floor;

@@ -14,6 +14,7 @@ class ChibuzoTurtleTest {
     @BeforeEach
     void setUp() {
         ijapa = new ChibuzoTurtle();
+        pad = new SketchPad(20, 20);
     }
 
     @Test
@@ -63,14 +64,13 @@ class ChibuzoTurtleTest {
     public void sketchPadDisplay(){
         System.out.println("Turtle about to move on the great sketchpad");
         System.out.println();
-        pad = new SketchPad();
+        pad.display();
     }
 
     @Test
     void thatTurtleCanMoveWhenThePenIsUp(){
         assertEquals(new Position(0, 0), ijapa.getPosition());
-        ijapa.move(5);
-        assertEquals(new Position(0, 5), ijapa.getPosition());
-
+        ijapa.move(pad, 5);
+        assertEquals(new Position(0, 4), ijapa.getPosition());
     }
 }
