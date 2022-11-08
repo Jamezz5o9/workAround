@@ -49,20 +49,39 @@ public class Turtle {
       noOfSteps = noOfSteps - 1;
       moveForward(noOfSteps);
     }
-    public void turn(){
+    public void turnRight(){
         if(currentDirection == X_AXIS) currentDirection = Y_AXIS;
+        else if(currentDirection == Y_AXIS) currentDirection = N_X_AXIS;
+        else if(currentDirection == N_X_AXIS) currentDirection = N_Y_AXIS;
+        else currentDirection = X_AXIS;
+    }
+    public void turnLeft(){
+        if(currentDirection == X_AXIS) currentDirection = N_Y_AXIS;
+        else if(currentDirection == N_Y_AXIS) currentDirection = N_X_AXIS;
+        else if(currentDirection == N_X_AXIS) currentDirection = Y_AXIS;
         else currentDirection = X_AXIS;
     }
     private void moveForward(int noOfSteps) {
         if(currentDirection == X_AXIS) moveInXDirection(noOfSteps);
         if(currentDirection == Y_AXIS) moveInYDirection(noOfSteps);
+        if(currentDirection == N_X_AXIS) moveInNXDirection(noOfSteps);
+        if(currentDirection == N_Y_AXIS) moveInNYDirection(noOfSteps);
+    }
+
+    private void moveInNYDirection(int noOfSteps) {
+        yCoordinate = getyCoordinate() - noOfSteps;
+        currentPosition.setRow(yCoordinate);
+    }
+
+    private void moveInNXDirection(int noOfSteps) {
+        xCoordinate = getxCoordinate() - noOfSteps;
+        currentPosition.setCol(xCoordinate);
     }
 
     private void moveInYDirection(int noOfSteps) {
         yCoordinate = getyCoordinate() + noOfSteps;
         currentPosition.setRow(yCoordinate);
     }
-
     private void moveInXDirection(int noOfStep){
         xCoordinate = getxCoordinate() + noOfStep;
         currentPosition.setCol(xCoordinate);    }

@@ -36,7 +36,6 @@ public class TurtleTest {
         tortoise.getTurtlePen().setPosition(DOWN);
         assertEquals(DOWN, tortoise.getTurtlePen().getPosition());
     }
-
     @Test
     public void turtleCanMoveForward(){
         turtlePenIsUp();
@@ -45,11 +44,14 @@ public class TurtleTest {
         assertEquals(new Position(0, 5), tortoise.getCurrentPosition());
         tortoise.moveForward(3, pad);
         assertEquals(new Position(0, 7), tortoise.getCurrentPosition());
-        tortoise.turn();
+        tortoise.turnRight();
         tortoise.moveForward(5,pad);
         assertEquals(new Position(4, 7), tortoise.getCurrentPosition());
-
-
-
+        tortoise.turnRight();
+        tortoise.moveForward(3, pad);
+        assertEquals(new Position(4, 5), tortoise.getCurrentPosition());
+        tortoise.turnRight();
+        tortoise.moveForward(3, pad);
+        assertEquals(new Position(2, 5), tortoise.getCurrentPosition());
     }
 }
