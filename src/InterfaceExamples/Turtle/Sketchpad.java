@@ -1,4 +1,4 @@
-package Turtle;
+package InterfaceExamples.Turtle;
 
 public class Sketchpad {
     private int[][] floor;
@@ -15,7 +15,8 @@ public class Sketchpad {
         for(int i = 0; i < floor.length; i++){
             System.out.print("| ");
             for(int j = 0; j < floor[0].length; j++){
-                System.out.print(floor[i][j] + " | ");
+                if(floor[i][j] == 1) System.out.print(floor[i][j] + " k ");
+                else System.out.print(floor[i][j] + " - ");
             }
             System.out.println();
         }

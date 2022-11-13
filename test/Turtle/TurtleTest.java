@@ -1,9 +1,12 @@
 package Turtle;
 
+import InterfaceExamples.Turtle.Position;
+import InterfaceExamples.Turtle.Sketchpad;
+import InterfaceExamples.Turtle.Turtle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static Turtle.PenPosition.*;
+import static InterfaceExamples.Turtle.PenPosition.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TurtleTest {
